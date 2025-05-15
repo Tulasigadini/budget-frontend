@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Budget Tracker</title>
+    
+    <!-- Prevent SPA routing issues and ensure stable URL handling -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
+    <script defer="defer" src="/static/js/main.0e33f22a.js"></script>
+    <link href="/static/css/main.4f1789fe.css" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
